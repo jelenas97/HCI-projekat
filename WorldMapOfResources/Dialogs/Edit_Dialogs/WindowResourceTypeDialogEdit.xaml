@@ -1,0 +1,53 @@
+﻿<Window x:Class="WorldMapOfResources.Dialogs.Edit_Dialogs.WindowResourceTypeDialogEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorldMapOfResources.Dialogs.Edit_Dialogs"
+        mc:Ignorable="d"
+        Title="WindowResourceTypeDialogEdit" Height="620" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="120"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Label Content="NOW YOU CAN EDIT!" Grid.ColumnSpan="3" Grid.Row="0" FontSize="23" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Code" Grid.Column="0" Grid.Row="1" FontSize="23" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Name" Grid.Column="0" Grid.Row="2" FontSize="23" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Icon" Grid.Column="0" Grid.Row="4" FontSize="23" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Description" Grid.Column="0" Grid.Row="3" FontSize="23" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <TextBox Text="{Binding Path=Code}" Width="207" Height="40" Foreground="#FF939191" FontSize="23" FontStyle="Italic" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  VerticalContentAlignment="Center" FontFamily="Candara" Margin="10,10,13.4,10"/>
+        <TextBox Text="{Binding Path=Names}" Width="208" Height="40" Foreground="#FF939191" FontSize="23" FontStyle="Italic" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  VerticalContentAlignment="Center" FontFamily="Candara" Margin="9,10,13.4,10"/>
+        <TextBox  x:Name="txtIcon" Text="Icon" Height="40" Width="159" Foreground="#FF939191" FontSize="23" FontStyle="Italic" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"  VerticalContentAlignment="Center" FontFamily="Candara" Margin="9,10,62.4,9.6"/>
+        <Button Content="..." Width="50" Height="40" FontSize="23" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,10,13.4,9.6" RenderTransformOrigin="0.508,0.5" Click="Button_Click" />
+        <TextBox Text="{Binding Path=Description}" Height="75" Width="207" Foreground="#FF939191" FontSize="23" FontStyle="Italic" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  VerticalContentAlignment="Center" FontFamily="Candara" Margin="10,9,13.4,16"/>
+        <Viewbox  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left">
+            <Border>
+                <Image  x:Name="Image"  DataContextChanged="Image_DataContextChanged"   VerticalAlignment="Top"  Source="images.png" Stretch="Fill" ></Image>
+            </Border>
+        </Viewbox>
+
+
+        <Button Grid.Column="1" Content="Cancel" Grid.Row="7" Width="70" Height="30" HorizontalAlignment="Right" Margin="0,14,16.4,16" Background="#FFCA1616" Foreground="#FFFFFDFD"/>
+        <Button Grid.Column="2" Content="Ok" Grid.Row="7" Width="70" Height="30" Margin="2.6,14,47.4,16" Foreground="#FFFCFBFB" Background="#FF339943" Click="Button_Click_1" />
+
+    </Grid>
+</Window>

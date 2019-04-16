@@ -1,0 +1,40 @@
+﻿<Window x:Class="WorldMapOfResources.Dialogs.WindowEtiquetteDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:WorldMapOfResources.Dialogs" 
+        mc:Ignorable="d"
+        Title="WindowEtiquetteDialog" Height="380" Width="450"  WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Height="Auto" Width="Auto">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Code" FontFamily="Candara" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Height="Auto" Grid.Column="0" Grid.Row="0" FontSize="25"/>
+        <Label Content="Color" FontFamily="Candara" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Center" Height="Auto" Grid.Column="0" Grid.Row="1" FontSize="25"/>
+        <Label Content="Description" FontFamily="Candara" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"  Height="Auto" Grid.Column="0" Grid.Row="2" FontSize="25"/>
+
+        <TextBox Text="{Binding Path=Code}"  FontStyle="Italic" FontFamily="Candara"  Foreground="#FF939191" Height="40" Width="180" Grid.Column="1" Grid.Row="0" FontSize="25" HorizontalAlignment="Center"/>
+        <xctk:ColorPicker Grid.Row="1" Grid.Column="1" Height="40" Width="180" DisplayColorAndName="True"/>
+
+        <TextBox Text="{Binding Path= Description}" Height="75" FontFamily="Candara" FontStyle="Italic" Foreground="#FF939191"  Width="178" Grid.Column="1" Grid.Row="2" FontSize="25" HorizontalAlignment="Center" Margin="12,10.4,10,35.2" Grid.RowSpan="2" />
+
+        <Button Grid.Column="1" Content="Cancel" Grid.Row="4" Width="70" Height="30" HorizontalAlignment="Right" Background="#FFCA1616" Foreground="#FFFFFDFD" Margin="0,15.8,13,15"/>
+        <Button Grid.Column="2" Content="Ok" Grid.Row="4" Width="70" Height="30"  Foreground="#FFFCFBFB" Background="#FF339943" Margin="4,15.8,26,15" Click="Button_Click" />
+
+
+    </Grid>
+</Window>

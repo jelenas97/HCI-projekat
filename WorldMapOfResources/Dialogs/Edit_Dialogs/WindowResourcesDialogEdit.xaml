@@ -1,0 +1,206 @@
+﻿<Window x:Class="WorldMapOfResources.Dialogs.Edit_Dialogs.WindowResourcesDialogEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorldMapOfResources.Dialogs.Edit_Dialogs"
+        mc:Ignorable="d"
+        Title="WindowResourcesDialogEdit" Height="780" Width="1000">
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/WorldMapOfResources;component/Pictures/World-Map-Satellite-India.jpg" Opacity="0.3"/>
+            </ScrollViewer.Background>
+            <Grid  Height="Auto" Width="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Name="lblNaslov" Content="NOW YOU CAN EDIT!" FontSize="27" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Margin="113.2,0,81.6,0.2" Width="278" FontWeight="Bold"/>
+                <Separator Height="25" Foreground="Black" Grid.ColumnSpan="5" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                <Label Name="lblName" Content="Code" FontSize="22" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="81"/>
+                <Label Name="lblPR" Content="Name" FontSize="22" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40"  Width="70"/>
+                <Label Name="lblTip" Content="Type" FontSize="22" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40"  Width="70" />
+                <Label Name="lblObn" Content="Renewability" FontSize="22" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40"  Width="135"/>
+                <Label Name="lblFrek" Content="Frequency" FontSize="22" Grid.Row="4" Grid.Column="3" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="117"/>
+
+
+                <Label Name="lblJM" Content="Unit of measure" FontSize="22" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="180"/>
+                <Label Name="lblDat" Content="Date of discovery" FontSize="22" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40"  Width="180" />
+                <Label Name="lblCena" Content="Price" FontSize="22" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40"  Width="59"/>
+
+                <TextBox VerticalAlignment="Center"  VerticalContentAlignment="Center"  FontStyle="Italic" Height="45" FontSize="22" Grid.Row="1" Grid.Column="1" Foreground="#FF939191"   Background="#4CFDFBFB" BorderBrush="#FFFBFBFC" >
+                    <TextBox.Text>
+                        <Binding Path="Code" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <TextBox VerticalAlignment="Center" Height="45" FontSize="22" Grid.Row="2" Grid.Column="1" Foreground="#FF939191" FontStyle="Italic" BorderBrush="#FFFCFAFA" Background="#4CFFFFFF"  >
+                    <TextBox.Text>
+                        <Binding Path="Mark" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+
+                <ComboBox VerticalContentAlignment="Center" Text="{Binding Path=Type}" FontSize="22" Grid.Row="3" Grid.Column="1" Height="44" VerticalAlignment="Center">
+                    <ComboBoxItem Name="cb1">Natural</ComboBoxItem>
+                    <ComboBoxItem Name="cb2">Man-Made</ComboBoxItem>
+                </ComboBox>
+
+
+                <ComboBox  VerticalContentAlignment="Center" Text="{Binding Path=Renewability}" FontSize="22" Grid.Row="4" Grid.Column="1" Height="44" VerticalAlignment="Center"  >
+                    <ComboBoxItem Name="cb21">Renewable</ComboBoxItem>
+                    <ComboBoxItem Name="cb22">Non-renewable</ComboBoxItem>
+                    <ComboBoxItem Name="cb23">Inexhaustible</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox  VerticalContentAlignment="Center" FontSize="22" Grid.Row="1" Grid.Column="4" Height="44" VerticalAlignment="Center" >
+                    <ComboBoxItem Name="cb31">Merica</ComboBoxItem>
+                    <ComboBoxItem Name="cb32">Barrel</ComboBoxItem>
+                    <ComboBoxItem Name="cb33">Ton</ComboBoxItem>
+                    <ComboBoxItem Name="cb34">Kilogram</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox FontSize="22"  VerticalContentAlignment="Center" Grid.Row="4" Grid.Column="4" Height="44" VerticalAlignment="Center" BorderBrush="White" >
+                    <ComboBoxItem Name="cb41">Rare</ComboBoxItem>
+                    <ComboBoxItem Name="cb42">Frequent</ComboBoxItem>
+                    <ComboBoxItem Name="cb43">Universal</ComboBoxItem>
+                </ComboBox>
+
+
+                <DatePicker Grid.Column="4" Grid.Row="2" FontSize="22" Foreground="#FF707070" Height="44" VerticalAlignment="Center" Background="White"  />
+                <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=Test1,UpdateSourceTrigger=PropertyChanged}"  Height="44" FontSize="22" Grid.Row="3" Grid.Column="4" Foreground="#FF939191" BorderBrush="#FFFBFBFC" HorizontalAlignment="Left" Width="174" Background="#4CFFFFFF" />
+
+                <Label Name="lblRb" Content="Is the resource of strategic importance?" HorizontalAlignment="Center" FontSize="22" Grid.ColumnSpan="3" Height="40" Grid.Row="6" Grid.Column="0"  Width="402" Margin="4,10.6,66.8,10.2"   />
+                <RadioButton Content="Yes" FontSize="22" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Height="40" Width="61" Grid.Column="0" Grid.Row="7" Background="#B2FFFFFF"   />
+                <RadioButton Content="No" FontSize="22" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="40" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7"  Width="100" Background="#B2FFFFFF"  />
+
+
+                <Label Content="Is it currently possible to exploit the resource?" Name="lblRb2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Grid.ColumnSpan="2"  Grid.Row="6" Grid.Column="3"  Width="467" Margin="8.2,10.6,-73.6,11.2" />
+
+
+                <RadioButton Content="Yes" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="40" Width="59" Grid.Column="3" Grid.Row="7"    />
+                <RadioButton Content="No" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="40" Grid.Column="4" Grid.Row="7"  />
+
+                <Label Name="lblOpis" VerticalAlignment="Center" Content="Description" HorizontalAlignment="Center" FontSize="22" Grid.Row="5" Grid.Column="0" Width="141"  Height="40"  />
+                <TextBox VerticalAlignment="Center" Text="Description"  VerticalContentAlignment="Center" Height="126" Foreground="#FF939191" FontStyle="Italic" FontSize="22" Grid.Row="5" Grid.Column="1" BorderBrush="#FFFCFDFD" Background="#4CFFFFFF"   />
+                <Label Content="$" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="4" FontSize="27" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Center" Height="44" Width="26" BorderBrush="#FFFAF8F8" Foreground="Black" Background="#4CFFFEFE"  />
+
+
+                <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="4" Grid.Row="5" Height="133" Width="260" Margin="2.4,11,-61.6,7.2" >
+                    <Grid  Width="258" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="0" Grid.Column="0" Height="50" Width="80" Click="LoadNafta">
+                            <StackPanel  Height="50" Width="80" >
+
+                                <Image Height="50 " Width="80" >
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/nafta.jpg" />
+                                    </Image.Source>
+                                </Image>
+
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="0" Grid.Column="1" Height="50" Width="80">
+                            <StackPanel  Height="50" Width="80" >
+                                <Image Height="50" Width="80">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/sume.jpg" />
+                                    </Image.Source>
+                                </Image>
+
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="0" Grid.Column="2" Height="50" Width="80" Click="LoadSunce">
+                            <StackPanel  Height="50" Width="80" >
+                                <Image Height="50" Width="80">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/sunce.jpg" />
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="1" Grid.Column="0" Height="50" Width="80">
+                            <StackPanel  Height="50" Width="80" >
+                                <Image Height="50" Width="80">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/vetar.jpg" />
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="1" Grid.Column="1" Height="50" Width="80">
+                            <StackPanel  Height="50" Width="80" >
+                                <Image Height="50" Width="80">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/voda.jpg" />
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Background="White" BorderBrush="White" Grid.Row="1" Grid.Column="2" Height="50" Width="80" Click="LoadAuto">
+                            <StackPanel  Height="50" Width="80" >
+                                <Image Height="50" Width="80">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="80" DecodePixelHeight="50" UriSource="/Pictures/auto.jpg" />
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+
+
+                <Image x:Name ="Loaded"  Grid.Row="5" Width="100" Height="100"  Grid.Column="3" Margin="52.2,29,48.6,22.2" >
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="100" DecodePixelHeight="100" UriSource="/Pictures/images.png" />
+                    </Image.Source>
+                </Image>
+
+                <Button Grid.Column="3" HorizontalContentAlignment="Center" Height="40" FontSize="23" VerticalContentAlignment="Center" Content="Cancel" Grid.Row="9" Width="140" HorizontalAlignment="Right" BorderBrush="#FFACACAC" Background="#FFCA1616" Foreground="#FFFDF8F8" Click="Button_Click_1" />
+                <Button Grid.Column="4" HorizontalContentAlignment="Center" Height="40" Content="Ok" FontSize="23" Grid.Row="9" VerticalContentAlignment="Center" BorderBrush="#FFACACAC" Background="#FF339943" Foreground="#FFF9F7F7" Margin="24.4,10.2,31.4,10.6" Click="Button_Click" />
+            </Grid>
+
+
+
+        </ScrollViewer>
+
+    </Grid>
+</Window>
